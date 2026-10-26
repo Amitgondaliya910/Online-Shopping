@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "image": "laptop.jpg",
+      "id": "1",
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": "55000",
+      "description": "High performance laptop"
+    },
+    {
+      "image": "shoes.jpg",
+      "id": "2",
+      "name": "Shoes",
+      "category": "Fashion",
+      "price": "2000",
+      "description": "Comfortable sports shoes"
+    },
+    {
+      "image": "mobile.jpg",
+      "id": "3",
+      "name": "Mobile",
+      "category": "Electronics",
+      "price": "15000",
+      "description": "Latest smartphone"
+    }
+  ]
+}

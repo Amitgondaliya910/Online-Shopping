@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+</head>     
+<body class="bg-light">
+    <form id="regform" style="padding-top: 8rem;">
+        <div class="container mt-4" id="reg">
+            <div class="col-md-6"></div>
+            <h2 class="text-left">Customer Registration</h2>
+            <div class="form-group mt-4">
+                <label>Full Name:</label>
+                <input type="text" id="fname" class="form-control" placeholder="enter Full Name">
+                <div class="error" id="errname"></div>
+            </div>
+            <div class="form-group mt-2">
+                <label>Email:</label>
+                <input type="text" id="email" class="form-control" placeholder="enter email">
+                <div class="error" id="errem"></div>
+            </div>  
+            <div class="form-group mt-2">
+                <label>Password:</label>
+                <input type="passsword" id="pwd" class="form-control" placeholder="enter pass">
+                <div class="error" id="errpwd"></div>
+            </div>
+            <div class="form-group mt-2">
+                <label>Mno:</label>
+                <input type="tel" id="mno" class="form-control" placeholder="enter mno">
+                <div class="error" id="errmno"></div>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-primary w-100">Register</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        $(function () {
+            $("#regform").submit(function (e) {
+                let valid = true;
+                let fnam = $("#fname").val();
+                let em = $("#email").val();
+                let pass = $("#pwd").val();
+                let mno = $("#mno").val();
+                if (fnam == "") {
+                    $("#errname").text("enter name");
+                    valid = false;
+                }
+                else {
+                    $("#errname").text("");
+                }
+                if (em == "") {
+                    $("#errem").text("enter email");
+                    valid = false;
+                }
+                else {
+                    $("#errem").text("");
+                }
+                if (pass == "") {
+                    $("#errpwd").text("enter password");
+                    valid = false;
+                }
+                else if (pass.length != 6) {
+                    $("#errpwd").text("enter 6 digits");
+                    valid = false;
+                }
+                else {
+                    $("#errpwd").text("");
+                }
+                if (mno.length != 10) {
+                    $("#errmno").text("enter 10 digits");
+                    valid = false;
+                }   
+                else {
+                    $("#errmno").text("");
+                }
+                if (valid == false) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
